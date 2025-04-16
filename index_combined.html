@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>부드러운 애니메이션 예제</title>
+  <style>
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    color: #222;
+    margin-bottom: 30px;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+  }
+  
+  .example {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .example:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  h2 {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+  }
+  
+  /* 각 애니메이션 종류 */
+  
+  .scale {
+    background-color: #3498db;
+  }
+  .scale:hover {
+    transform: scale(1.2);
+  }
+  
+  .rotate {
+    background-color: #e74c3c;
+  }
+  .rotate:hover {
+    transform: rotate(45deg);
+  }
+  
+  .move {
+    background-color: #2ecc71;
+  }
+  .move:hover {
+    transform: translateY(-20px);
+  }
+  
+  .pulse {
+    background-color: #f39c12;
+    animation: pulseAnim 2s infinite;
+  }
+  
+  @keyframes pulseAnim {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .complex-hover {
+    background-color: #9b59b6;
+  }
+  .complex-hover:hover {
+    transform: rotate(45deg) scale(1.2);
+    background-color: #8e44ad;
+    border-radius: 50%;
+  }
+  
+  .shadow-loop {
+    background-color: #34495e;
+    animation: shadowFlow 3s infinite alternate;
+  }
+  
+  @keyframes shadowFlow {
+    0% {
+      transform: translateX(-10px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      background-color: #34495e;
+    }
+    50% {
+      transform: translateX(0px) scale(1.1);
+      box-shadow: 0 0 20px rgba(52, 152, 219, 0.6);
+      background-color: #3498db;
+    }
+    100% {
+      transform: translateX(10px);
+      box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
+      background-color: #e74c3c;
+    }
+  }
+  
+</style>
+</head>
+<body>
+  <h1>부드러운 애니메이션 예제</h1>
+  <div class="container">
+    <div class="example">
+      <h2>확대 (hover)</h2>
+      <div class="box scale"></div>
+      <p>마우스를 올려보세요</p>
+    </div>
+    <div class="example">
+      <h2>회전 (hover)</h2>
+      <div class="box rotate"></div>
+      <p>마우스를 올려보세요</p>
+    </div>
+    <div class="example">
+      <h2>이동 (hover)</h2>
+      <div class="box move"></div>
+      <p>마우스를 올려보세요</p>
+    </div>
+    <div class="example">
+      <h2>펄스 (자동)</h2>
+      <div class="box pulse"></div>
+      <p>자동으로 실행됩니다</p>
+    </div>
+    <div class="example">
+      <h2>복합 효과 (hover)</h2>
+      <div class="box complex-hover"></div>
+      <p>마우스를 올려보세요</p>
+    </div>
+    <div class="example">
+      <h2>그림자 흐름 (자동)</h2>
+      <div class="box shadow-loop"></div>
+      <p>자동으로 실행됩니다</p>
+    </div>
+  </div>
+</body>
+</html>
